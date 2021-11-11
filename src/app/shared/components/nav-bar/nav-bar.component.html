@@ -1,0 +1,45 @@
+<!-- <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>App del Clima</span>
+    <span class="example-spacer"></span>
+  </mat-toolbar>
+  <mat-drawer-container class="example-container" [hasBackdrop]="false">
+    <mat-divider></mat-divider>
+    <mat-drawer #drawer mode="push"  color="primary">
+        <button mat-button class="menu-button">
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+        </button>
+    </mat-drawer>
+    <mat-drawer-content>
+        
+  </mat-drawer-content>
+</mat-drawer-container> -->
+<mat-toolbar color="primary" class="example-toolbar">
+	<button mat-icon-button (click)="isExpanded = !isExpanded">
+		<mat-icon>menu</mat-icon>
+	</button>
+	<h1 class="example-app-name">App Wheather</h1>
+</mat-toolbar>
+<mat-sidenav-container class="example-container" autosize>
+	<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true">
+		<mat-nav-list>
+			<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+				<a mat-list-item [routerLink]="['/page']" routerLinkActive="router-link-active">
+					<mat-icon mat-list-icon>home</mat-icon>
+<span *ngIf="isExpanded || isShowing"> Home</span>
+				</a>
+			</mat-list-item>
+			
+		</mat-nav-list>
+		<mat-nav-list>
+		</mat-nav-list>
+	</mat-sidenav>
+
+	<div class="example-sidenav-content">
+		<ng-content select="[content]"></ng-content>
+	</div>
+
+</mat-sidenav-container>
