@@ -5,6 +5,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { PagesComponent } from './pages.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { ComponentsModule } from '../shared/components/components.module';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ComponentsModule } from '../shared/components/components.module';
     CommonModule,
     PagesRoutingModule,
     DashboardModule,
-    ComponentsModule
+    ComponentsModule,
+    MatCardModule
   ]
 })
 export class PagesModule { }
