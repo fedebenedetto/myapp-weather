@@ -1,1 +1,10 @@
+<main>
 <app-card-now [current]="current"></app-card-now>
+<mat-tab-group>
+    <mat-tab label="Today">
+        <app-card-hourly [hourly]="hourly"></app-card-hourly>
+
+    </mat-tab>
+    <mat-tab label="Week"></mat-tab>
+</mat-tab-group>
+</main>

@@ -7,18 +7,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardService } from './dashboard.service';
 import { CardNowComponent } from './components/card-now/card-now.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
+import { CardHourlyComponent } from './components/card-hourly/card-hourly.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    CardNowComponent
+    CardNowComponent,
+    CardHourlyComponent
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatTabsModule
   ],
   providers:[DashboardService]
 })
