@@ -4,6 +4,8 @@
     grid-template-columns: repeat(auto-fit, minmax(90px, 100px));
   
     padding: 1em 0;
+    overflow:scroll;
+    max-height: 300px;
   
     .widget {
       width: 100px;

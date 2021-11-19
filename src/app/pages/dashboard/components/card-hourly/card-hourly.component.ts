@@ -7,16 +7,10 @@ import { Hourly } from 'src/app/models/hourly.model';
   templateUrl: './card-hourly.component.html',
   styleUrls: ['./card-hourly.component.scss']
 })
-export class CardHourlyComponent implements OnInit, AfterViewInit {
+export class CardHourlyComponent implements OnInit{
 
   @Input() hourly:Array<Hourly> = new Array<Hourly>();
   constructor() { }
-  ngAfterViewInit(): void {
-    this.hourly.forEach(x=>{
-    x.dtFormat = moment(x.dt * 1000).lang('es').format('EEE, MMM d');
-    x.temp = Math.round(x.temp);
-  })
-  }
 
   ngOnInit(): void {
      

@@ -9,6 +9,9 @@ import { CardNowComponent } from './components/card-now/card-now.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { CardHourlyComponent } from './components/card-hourly/card-hourly.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -22,7 +25,10 @@ import { CardHourlyComponent } from './components/card-hourly/card-hourly.compon
     DashboardRoutingModule,
     HttpClientModule,
     MatCardModule,
-    MatTabsModule
+    MatTabsModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule
   ],
   providers:[DashboardService]
 })

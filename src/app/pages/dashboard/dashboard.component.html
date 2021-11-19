@@ -1,4 +1,11 @@
 <main>
+    <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>Ingresar Ciudad</mat-label>
+        <input matInput type="text" #city>
+        <button matSuffix mat-icon-button (click)="find()">
+          <mat-icon>input</mat-icon>
+        </button>
+      </mat-form-field>
 <app-card-now [current]="current"></app-card-now>
 <mat-tab-group>
     <mat-tab label="Today">
