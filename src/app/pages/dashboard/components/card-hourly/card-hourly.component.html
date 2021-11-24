@@ -1,11 +1,11 @@
 <section>
         <div class="today-forecast">
           <div
-            *ngFor="let item of hourly; first as isFirst"
-            class="widget"
+            *ngFor="let item of hourly; first as isFirst; index as i"
           >
+          <div class="widget" *ngIf="i <= 24">
             <p class="medium-text">
-              {{ isFirst ? "Now" : item.dtFormat }}
+              {{ isFirst ? "Ahora" : item.dtFormat }}
             </p>
             <img
               [src]="
@@ -19,6 +19,7 @@
             />
             <p class="medium-text">{{ item.temp }}°</p>
           </div>
+        </div>
         </div>
     
   </section>

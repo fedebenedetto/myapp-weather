@@ -7,5 +7,6 @@ export class Daily extends Hourly{
     moon_phase!: number;
     temp!:Temp;
     clouds!: number;
-    uvi!: number
+    uvi!: number;
+    fecha!:string
 }

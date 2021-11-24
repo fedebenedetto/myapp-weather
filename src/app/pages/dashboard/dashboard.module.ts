@@ -12,13 +12,15 @@ import { CardHourlyComponent } from './components/card-hourly/card-hourly.compon
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { CardDailyComponent } from './components/card-daily/card-daily.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
     CardNowComponent,
-    CardHourlyComponent
+    CardHourlyComponent,
+    CardDailyComponent
   ],
   imports: [
     CommonModule,

@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as moment from 'moment';
 import { CurrentResponse } from 'src/app/models/current-response.model';
+import { Daily } from 'src/app/models/daily.model';
 import { Hourly } from 'src/app/models/hourly.model';
 import Swal from 'sweetalert2';
 import { DashboardService } from './dashboard.service';
@@ -15,6 +16,7 @@ export class DashboardComponent implements OnInit {
   current: CurrentResponse = new CurrentResponse();
   hourly: Array<Hourly> = new Array<Hourly>();
   value: string = '';
+  daily:Array<Daily> = new Array<Daily>();
 
   @ViewChild('city') city!: ElementRef;
   constructor(private dbSrv: DashboardService) { }
@@ -76,6 +78,13 @@ export class DashboardComponent implements OnInit {
         this.hourly.forEach(x => {
           x.dtFormat = moment(x.dt * 1000).lang('es').format('HH:mm');
           x.temp = Math.round(x.temp);
+        });
+
+        this.daily = data.daily;
+        this.daily.forEach(x=>{
+          x.fecha = moment(x.dt * 1000).lang('es').format('ddd, MM DD');
+          x.temp.min = Math.round(x.temp.min);
+          x.temp.max = Math.round(x.temp.max);
         })
       }else{
         Swal.fire({

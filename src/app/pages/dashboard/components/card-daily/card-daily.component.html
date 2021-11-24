@@ -1,0 +1,36 @@
+<div class="week-forecast">
+    <div
+      *ngFor="let daily of dailyWeather; first as isFirst"
+      class="widget"
+    >
+      <div class="main">
+        <div class="date">
+          <div class="day normal-text-bold">
+            {{ isFirst ? "Hoy" : daily.fecha }}
+          </div>
+          <div class="desc small-text-medium">
+            {{ daily.weather[0].description}}
+          </div>
+        </div>
+        <img
+          [src]="
+            'assets/icons/weather-conditions/' +
+            daily.weather[0].icon +
+            '.svg'
+          "
+          width="64"
+          height="64"
+          alt="Weather Illustration"
+        />
+      </div>
+      <div class="temp">
+        <p class="max medium-text-semibold">
+          {{ daily.temp.max}} °C
+        </p>
+        <span>|</span>
+        <p class="min medium-text-semibold">
+          {{ daily.temp.min}} °C
+        </p>
+      </div>
+    </div>
+  </div>
